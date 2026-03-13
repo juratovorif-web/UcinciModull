@@ -1,0 +1,120 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _4_1_Exceptions
+{
+    class hmwrk
+    {
+      
+
+
+
+
+       static void Main(string[] args)
+        {
+            string email = Console.ReadLine();
+            if(!email.Contains("@"))
+            {
+                throw new InvalidEmailException("Not Exception");
+            }
+        }
+        public class InvalidEmailException : Exception
+        {
+            public InvalidEmailException(string massage) : base(massage)
+            {
+                
+            }
+        }
+
+     static void Main(string[] args)
+        {
+            Console.WriteLine(Test());
+        }
+
+
+        static int Test()
+        {
+            try
+            {
+                Console.WriteLine("try");
+                return 5;
+            }
+            finally
+            {
+                Console.WriteLine("finally");
+            }
+        }
+
+
+
+
+            try
+            {
+                var name = int.Parse(Console.ReadLine());
+                Console.WriteLine(name);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Operation fineshed");
+            }
+
+     static void Main(string[] args)
+        {
+            try
+            {
+                string name = Console.ReadLine();
+                StringEntitiy(name);
+            }
+            catch(Exception ex) 
+            {
+                throw;
+            }
+
+        }
+                
+        static void StringEntitiy(string name)
+        {
+            if(string.IsNullOrEmpty(name))
+            {
+                throw new Exception("Name not or Entitiy");
+            }
+            Console.WriteLine("Name " + name);
+        }
+
+
+
+    while (true)
+            {
+                Console.WriteLine("Faqat Son kriting ");
+                try
+                {
+                    var num = int.Parse(Console.ReadLine());
+                    Console.WriteLine(num);
+                }
+                catch(Exception ex)
+                {
+                    throw;
+                }
+            }
+
+      //try
+            //{
+            //    int age = 7;
+            //    if(age < 18)
+            //    {
+            //        throw new AgeException("18 dan kickna");
+            //    }
+            //}
+            //catch (AgeException ex)
+            //{
+
+            //}
+    }
+}
